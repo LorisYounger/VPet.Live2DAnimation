@@ -1,4 +1,6 @@
 
+using LinePutScript;
+using System.IO;
 using System.Windows.Controls;
 using VPet_Simulator.Core;
 using static VPet_Simulator.Core.Picture;
@@ -10,25 +12,41 @@ namespace VPet.Live2DAnimation
     /// </summary>
     public class Live2DAnimation : IImageRun
     {
-        public bool PlayState { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool IsLoop { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool IsContinue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public static void LoadGraph(GraphCore graph, FileSystemInfo path, ILine info)
+        {
+            if (!(path is DirectoryInfo p))
+            {
+                Picture.LoadGraph(graph, path, info);
+                return;
+            }
+            var paths = p.GetFiles();
 
-        public bool IsReady => throw new NotImplementedException();
+            bool isLoop = info[(gbol)"loop"];
+            PNGAnimation pa = new PNGAnimation(graph, path.FullName, paths, new GraphInfo(path, info), isLoop);
+            graph.AddGraph(pa);
+        }
+        public Live2DAnimation(GraphCore graphCore, string path, FileInfo[] paths, GraphInfo graphinfo, bool isLoop = false)
+        {
 
-        public GraphInfo GraphInfo => throw new NotImplementedException();
+        }
+        public bool IsLoop { get; set; }
 
-        public Task Run(Image img, Action? EndAction = null)
+        public bool IsReady { get; set; } = false;
+
+        public bool IsFail { get; set; } = false;
+
+        public string FailMessage { get; set; } = "";
+
+        public GraphInfo GraphInfo { get; set; }
+
+        public IGraph.TaskControl Control { get; set; }
+
+        public Task Run(Image img, Action EndAction = null)
         {
             throw new NotImplementedException();
         }
 
-        public void Run(Border parant, Action? EndAction = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Stop(bool StopEndAction = false)
+        public void Run(Decorator parant, Action EndAction = null)
         {
             throw new NotImplementedException();
         }

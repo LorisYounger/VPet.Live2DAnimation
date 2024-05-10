@@ -2,14 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="LinePutScript.Localization.WPF" Version="1.0.7" />
     <PackageReference Include="Live2DCSharpSDK" Version="1.0.0.6" />
-    <PackageReference Include="VPet-Simulator.Core" Version="1.1.0.1" />
+    <PackageReference Include="OpenTK.GLWpfControl" Version="4.2.3" />
+    <PackageReference Include="VPet-Simulator.Core" Version="1.1.0.16-alpha" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Live2DCubismCore.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
