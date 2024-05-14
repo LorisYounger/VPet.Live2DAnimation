@@ -1,5 +1,6 @@
 
 using LinePutScript;
+using Live2DCSharpSDK.WPF;
 using System.IO;
 using System.Windows.Controls;
 using VPet_Simulator.Core;
@@ -8,26 +9,36 @@ using static VPet_Simulator.Core.Picture;
 namespace VPet.Live2DAnimation
 {
     /// <summary>
-    /// Live2D动画
+    /// Live2D动画 动作文件
     /// </summary>
-    public class Live2DAnimation : IImageRun
+    public class Live2DMotionAnimation : IImageRun
     {
         public static void LoadGraph(GraphCore graph, FileSystemInfo path, ILine info)
         {
-            if (!(path is DirectoryInfo p))
+            if (!(path is FileInfo f) || f.Name.ToLower().EndsWith(".model3.json"))
             {
-                Picture.LoadGraph(graph, path, info);
                 return;
             }
-            var paths = p.GetFiles();
-
             bool isLoop = info[(gbol)"loop"];
-            PNGAnimation pa = new PNGAnimation(graph, path.FullName, paths, new GraphInfo(path, info), isLoop);
-            graph.AddGraph(pa);
+            graph.AddGraph(new Live2DMOCAnimation(graph, f, new GraphInfo(path, info), isLoop));
         }
-        public Live2DAnimation(GraphCore graphCore, string path, FileInfo[] paths, GraphInfo graphinfo, bool isLoop = false)
+        private GraphCore GraphCore;
+        /// <summary>
+        /// Json地址
+        /// </summary>
+        public string Path { get; set; }
+        /// <summary>
+        /// 模型名称
+        /// </summary>
+        public string ModelName { get; set; }
+        public Live2DMotionAnimation(GraphCore graphCore, FileInfo path, GraphInfo graphinfo, bool isLoop = false)
         {
+            IsLoop = isLoop;
+            GraphInfo = graphinfo;
+            GraphCore = graphCore;
+            Path = path.FullName;
 
+            ModelName = path.Name.Split('.')[0];
         }
         public bool IsLoop { get; set; }
 

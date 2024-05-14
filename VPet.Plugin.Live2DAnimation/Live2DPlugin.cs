@@ -1,4 +1,5 @@
 
+using VPet.Live2DAnimation;
 using VPet_Simulator.Windows.Interface;
 
 namespace VPet.Plugin.Live2DAnimation
@@ -9,7 +10,10 @@ namespace VPet.Plugin.Live2DAnimation
         {
 
         }
-
+        public override void LoadPlugin()
+        {
+            Program.Main();
+        }
         public override string PluginName => "Live2DAnimation";
     }
 

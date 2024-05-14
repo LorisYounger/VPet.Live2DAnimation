@@ -7,3 +7,4 @@
 
 使用本项目需要添加 [Live2DCubismCore.dll](https://www.live2d.com/sdk/download/native/) 到软件发布根目录/引用
 
+**注:未完成**
