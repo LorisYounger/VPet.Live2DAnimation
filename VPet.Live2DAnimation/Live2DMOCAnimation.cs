@@ -21,12 +21,18 @@ namespace VPet.Live2DAnimation
                 return;
             }
             bool isLoop = info[(gbol)"loop"];
-            graph.AddGraph(new Live2DMOCAnimation(graph, f, new GraphInfo(path, info), isLoop));
+            string modelname = info[(gstr)"modelname"];
+            var gi = new GraphInfo(path, info);
+            if (string.IsNullOrWhiteSpace(modelname))
+            {
+                modelname = gi.Name;
+            }
+            graph.AddGraph(new Live2DMOCAnimation(graph, f,gi, modelname, isLoop));
         }
         private GraphCore GraphCore;
         public Live2DWPFModel Model { get; set; }
         public string ModelName { get; set; }
-        public Live2DMOCAnimation(GraphCore graphCore, FileInfo path, GraphInfo graphinfo, bool isLoop = false)
+        public Live2DMOCAnimation(GraphCore graphCore, FileInfo path, GraphInfo graphinfo, string modelname, bool isLoop = false)
         {
             IsLoop = isLoop;
             GraphInfo = graphinfo;
@@ -34,7 +40,7 @@ namespace VPet.Live2DAnimation
             try
             {
                 Model = new Live2DWPFModel(path.FullName);
-                ModelName = path.Name[..^path.Extension.Length];
+                ModelName = modelname;
                 GraphCore.CommConfig["L2D" + ModelName] = Model;
                 IsReady = true;
             }

@@ -1,4 +1,5 @@
 vupmod#Live2DAnimation:|author#LorisYounger[认证]:|gamever#11020:|ver#100:|
+dllskip:|Live2DCubismCore.dll:|libSkiaSharp.dll:|glfw3.dll:|
 intro#Live2D动画加载支持:|
 lang#en:|Live2D动画加载支持#Live2D Animation support:|Live2DAnimation#Live2DAnimation:|
 lang#zh-Hans:|Live2DAnimation#Live2DAnimation:|Live2D动画加载支持#Live2D动画加载支持:|

@@ -33,10 +33,10 @@ namespace VPet.Live2DAnimation
                 return;
             }
             bool isLoop = info[(gbol)"loop"];
-            if (f.Name.ToLower().EndsWith(".model3.json"))
-                graph.AddGraph(new Live2DMOCAnimation(graph, f, new GraphInfo(path, info), isLoop));
+            if (f.Name.ToLower().EndsWith(".motion3.json"))
+                Live2DMotionAnimation.LoadGraph(graph, f, info);
             else if (f.Extension.Equals(".moc3", StringComparison.CurrentCultureIgnoreCase))
-                graph.AddGraph(new Live2DMOCAnimation(graph, f, new GraphInfo(path, info), isLoop));
+                Live2DMOCAnimation.LoadGraph(graph, f, info);
         }
     }
 }

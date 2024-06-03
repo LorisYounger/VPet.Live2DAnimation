@@ -15,12 +15,17 @@ namespace VPet.Live2DAnimation
     {
         public static void LoadGraph(GraphCore graph, FileSystemInfo path, ILine info)
         {
-            if (!(path is FileInfo f) || f.Name.ToLower().EndsWith(".model3.json"))
+            if (!(path is FileInfo f) || !f.Name.ToLower().EndsWith(".motion3.json", StringComparison.CurrentCultureIgnoreCase))
             {
                 return;
             }
             bool isLoop = info[(gbol)"loop"];
-            graph.AddGraph(new Live2DMOCAnimation(graph, f, new GraphInfo(path, info), isLoop));
+            string modelname = info[(gstr)"modelname"];
+            if (string.IsNullOrWhiteSpace(modelname))
+            {
+                modelname = path.Name.Split('.')[0];
+            }
+            graph.AddGraph(new Live2DMotionAnimation(graph, f, new GraphInfo(path, info), modelname, isLoop));
         }
         private GraphCore GraphCore;
         /// <summary>
@@ -31,22 +36,21 @@ namespace VPet.Live2DAnimation
         /// Ä£ÐÍÃû³Æ
         /// </summary>
         public string ModelName { get; set; }
-        public Live2DMotionAnimation(GraphCore graphCore, FileInfo path, GraphInfo graphinfo, bool isLoop = false)
+        public Live2DMotionAnimation(GraphCore graphCore, FileInfo path, GraphInfo graphinfo, string modelname, bool isLoop = false)
         {
             IsLoop = isLoop;
             GraphInfo = graphinfo;
             GraphCore = graphCore;
             Path = path.FullName;
-
-            ModelName = path.Name.Split('.')[0];
+            ModelName = modelname;
         }
         public bool IsLoop { get; set; }
 
-        public bool IsReady { get; set; } = false;
+        public bool IsReady => true;
 
-        public bool IsFail { get; set; } = false;
+        public bool IsFail => false;
 
-        public string FailMessage { get; set; } = "";
+        public string FailMessage => "";
 
         public GraphInfo GraphInfo { get; set; }
 

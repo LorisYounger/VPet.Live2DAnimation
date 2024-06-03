@@ -1,0 +1,495 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "VPet.Plugin.Live2DAnimation/1.0.0": {
+        "dependencies": {
+          "VPet-Simulator.Core": "1.1.0.20",
+          "VPet-Simulator.Windows.Interface": "1.1.0.20",
+          "VPet.Live2DAnimation": "1.0.0"
+        },
+        "runtime": {
+          "VPet.Plugin.Live2DAnimation.dll": {}
+        }
+      },
+      "LinePutScript/1.11.6": {
+        "runtime": {
+          "lib/net8.0/LinePutScript.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "LinePutScript.Localization.WPF/1.0.7": {
+        "dependencies": {
+          "LinePutScript": "1.11.6"
+        },
+        "runtime": {
+          "lib/net6.0/LinePutScript.Localization.WPF.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "OpenTK/4.8.2": {
+        "dependencies": {
+          "OpenTK.Audio.OpenAL": "4.8.2",
+          "OpenTK.Compute": "4.8.2",
+          "OpenTK.Core": "4.8.2",
+          "OpenTK.Graphics": "4.8.2",
+          "OpenTK.Input": "4.8.2",
+          "OpenTK.Mathematics": "4.8.2",
+          "OpenTK.Windowing.Common": "4.8.2",
+          "OpenTK.Windowing.Desktop": "4.8.2",
+          "OpenTK.Windowing.GraphicsLibraryFramework": "4.8.2"
+        }
+      },
+      "OpenTK.Audio.OpenAL/4.8.2": {
+        "dependencies": {
+          "OpenTK.Core": "4.8.2",
+          "OpenTK.Mathematics": "4.8.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OpenTK.Audio.OpenAL.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "OpenTK.Compute/4.8.2": {
+        "runtime": {
+          "lib/netcoreapp3.1/OpenTK.Compute.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "OpenTK.Core/4.8.2": {
+        "runtime": {
+          "lib/netstandard2.1/OpenTK.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "OpenTK.GLWpfControl/4.2.3": {
+        "dependencies": {
+          "OpenTK": "4.8.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/GLWpfControl.dll": {
+            "assemblyVersion": "4.2.3.0",
+            "fileVersion": "4.2.3.0"
+          }
+        }
+      },
+      "OpenTK.Graphics/4.8.2": {
+        "dependencies": {
+          "OpenTK.Core": "4.8.2",
+          "OpenTK.Mathematics": "4.8.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OpenTK.Graphics.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "OpenTK.Input/4.8.2": {
+        "runtime": {
+          "lib/netstandard2.0/OpenTK.Input.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "OpenTK.Mathematics/4.8.2": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OpenTK.Mathematics.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "OpenTK.redist.glfw/3.3.8.39": {
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libglfw-wayland.so.3.3": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libglfw.so.3.3": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libglfw.3.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libglfw.3.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/glfw3.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/glfw3.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "OpenTK.Windowing.Common/4.8.2": {
+        "dependencies": {
+          "OpenTK.Core": "4.8.2",
+          "OpenTK.Mathematics": "4.8.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OpenTK.Windowing.Common.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "OpenTK.Windowing.Desktop/4.8.2": {
+        "dependencies": {
+          "OpenTK.Core": "4.8.2",
+          "OpenTK.Mathematics": "4.8.2",
+          "OpenTK.Windowing.Common": "4.8.2",
+          "OpenTK.Windowing.GraphicsLibraryFramework": "4.8.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OpenTK.Windowing.Desktop.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "OpenTK.Windowing.GraphicsLibraryFramework/4.8.2": {
+        "dependencies": {
+          "OpenTK.Core": "4.8.2",
+          "OpenTK.redist.glfw": "3.3.8.39"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OpenTK.Windowing.GraphicsLibraryFramework.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "Panuon.WPF/1.1.0": {
+        "runtime": {
+          "lib/net8.0-windows/Panuon.WPF.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "Panuon.WPF.UI/1.2.1.2": {
+        "dependencies": {
+          "Panuon.WPF": "1.1.0"
+        },
+        "runtime": {
+          "lib/net8.0-windows/Panuon.WPF.UI.dll": {
+            "assemblyVersion": "1.2.1.2",
+            "fileVersion": "1.2.1.2"
+          }
+        }
+      },
+      "SkiaSharp/2.88.7": {
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "2.88.7",
+          "SkiaSharp.NativeAssets.macOS": "2.88.7"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.7.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.macOS/2.88.7": {
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Win32/2.88.7": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/libSkiaSharp.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libSkiaSharp.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
+      "VPet-Simulator.Core/1.1.0.20": {
+        "dependencies": {
+          "LinePutScript": "1.11.6",
+          "LinePutScript.Localization.WPF": "1.0.7",
+          "Panuon.WPF.UI": "1.2.1.2"
+        },
+        "runtime": {
+          "lib/net8.0/VPet-Simulator.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "VPet-Simulator.Windows.Interface/1.1.0.20": {
+        "dependencies": {
+          "VPet-Simulator.Core": "1.1.0.20"
+        },
+        "runtime": {
+          "lib/net8.0/VPet-Simulator.Windows.Interface.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Live2DCSharpSDK.App/1.0.0": {
+        "dependencies": {
+          "Live2DCSharpSDK.Framework": "1.0.0",
+          "SkiaSharp": "2.88.7"
+        },
+        "runtime": {
+          "Live2DCSharpSDK.App.dll": {}
+        }
+      },
+      "Live2DCSharpSDK.Framework/1.0.0": {
+        "runtime": {
+          "Live2DCSharpSDK.Framework.dll": {}
+        }
+      },
+      "Live2DCSharpSDK.WPF/1.0.0": {
+        "dependencies": {
+          "Live2DCSharpSDK.App": "1.0.0",
+          "OpenTK": "4.8.2",
+          "OpenTK.GLWpfControl": "4.2.3"
+        },
+        "runtime": {
+          "Live2DCSharpSDK.WPF.dll": {}
+        }
+      },
+      "VPet.Live2DAnimation/1.0.0": {
+        "dependencies": {
+          "LinePutScript.Localization.WPF": "1.0.7",
+          "Live2DCSharpSDK.WPF": "1.0.0",
+          "OpenTK.GLWpfControl": "4.2.3",
+          "VPet-Simulator.Core": "1.1.0.20"
+        },
+        "runtime": {
+          "VPet.Live2DAnimation.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "VPet.Plugin.Live2DAnimation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LinePutScript/1.11.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2m1AsVxPKKK6Ey/mFt0yEGdrS2LjDX0hKZrKK4LzxNRXePmyWrkiRCUXJK5mSNNZw0OENRAn58jdX9+00jFL+A==",
+      "path": "lineputscript/1.11.6",
+      "hashPath": "lineputscript.1.11.6.nupkg.sha512"
+    },
+    "LinePutScript.Localization.WPF/1.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n9Hh57jE8pNwzFypx2RUu6hYFMotZ+RDQYvpHwtHojLrFnZ35zJRgTXK3WKtYZHn7Ldm17+Q7NKQnXG1hkSrnQ==",
+      "path": "lineputscript.localization.wpf/1.0.7",
+      "hashPath": "lineputscript.localization.wpf.1.0.7.nupkg.sha512"
+    },
+    "OpenTK/4.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s2bqkD0glaX5Zbrv0Nj91zcefGrwq+nAp7SnXw14Z22Wj1nVE9CWkEyKX8tha1EdxqSRwKdP6gi+xzZXs4nK4Q==",
+      "path": "opentk/4.8.2",
+      "hashPath": "opentk.4.8.2.nupkg.sha512"
+    },
+    "OpenTK.Audio.OpenAL/4.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/Xe0luzJiVOvJ8YXGMY/YLZsGsb0/7Ms09isb/WxkKWjLyuiB2OIflZ49VHmumZpQDz2PUgwqOt2fucviLOmuw==",
+      "path": "opentk.audio.openal/4.8.2",
+      "hashPath": "opentk.audio.openal.4.8.2.nupkg.sha512"
+    },
+    "OpenTK.Compute/4.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n3gBbXOTCkvkNjSOKkVpoxfF/QXzo+cPWKtzObm4f/J+5mOE8odHKXgPn1765Tnu2Ou2ImvdXi/bUFQt/V5Qiw==",
+      "path": "opentk.compute/4.8.2",
+      "hashPath": "opentk.compute.4.8.2.nupkg.sha512"
+    },
+    "OpenTK.Core/4.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BS5IM1W/BK9BtmsEnYT/RGv+KDK0Zrnw8nDDGvK45ywBjMLv+qBRB+Vkx5sQ4Jjy7btLxxqrPHmT3wt5N/PcxA==",
+      "path": "opentk.core/4.8.2",
+      "hashPath": "opentk.core.4.8.2.nupkg.sha512"
+    },
+    "OpenTK.GLWpfControl/4.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VIq15MqeMB42v7cuoPcbHAFzdlOcN5DZEhguuQVdvZP0NlfajjaoVDqtP3koOWLs1how2YqCaVk1qIvsuRdQqQ==",
+      "path": "opentk.glwpfcontrol/4.2.3",
+      "hashPath": "opentk.glwpfcontrol.4.2.3.nupkg.sha512"
+    },
+    "OpenTK.Graphics/4.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qpbyWqdO+yEFVFinKwEWKgi1Jgd0fVSgHbB7d5I8ozI9RL/SKZSNmJDxLjTMSQImJtFixmATcLEWwvEceJ/JsQ==",
+      "path": "opentk.graphics/4.8.2",
+      "hashPath": "opentk.graphics.4.8.2.nupkg.sha512"
+    },
+    "OpenTK.Input/4.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BGs7STF0/o4kNJ1pWXko4I3IwEhieOHVgJFzXzo5m1tI4zMKjBqmzuc4GGfCu+Gtiv33vRYx3dt9f659nr5J8w==",
+      "path": "opentk.input/4.8.2",
+      "hashPath": "opentk.input.4.8.2.nupkg.sha512"
+    },
+    "OpenTK.Mathematics/4.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A8D3eBWi/LKndvTQQ9o9uwyQJUjGORfWCn/gOvX0jIwmTctkLGnOdw5kw4JbRnzfrhZoSIaqZ7MYWWhIkasORw==",
+      "path": "opentk.mathematics/4.8.2",
+      "hashPath": "opentk.mathematics.4.8.2.nupkg.sha512"
+    },
+    "OpenTK.redist.glfw/3.3.8.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JzjaBzHTyKenUk9CXOYIqA/v7VMnjFnqmd3SKR3I1YpuOTu/H3ohyy3o+ZfMCQ6IRKs7CLfSPXMarKLvwD0WgQ==",
+      "path": "opentk.redist.glfw/3.3.8.39",
+      "hashPath": "opentk.redist.glfw.3.3.8.39.nupkg.sha512"
+    },
+    "OpenTK.Windowing.Common/4.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cE7w2AboX/cxtOl7UWa1rTnH4uUoCEg9rtppN6d1/8GOfKUW8LjO6bjEePrRk9LzRZL+5dky3nfw6ZONn5ItyA==",
+      "path": "opentk.windowing.common/4.8.2",
+      "hashPath": "opentk.windowing.common.4.8.2.nupkg.sha512"
+    },
+    "OpenTK.Windowing.Desktop/4.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SlEuiAllLgE03/jJbloCOD1iNtBpnhMuVb510ccA/ILp//mzXHeRKsz7zFJ1ct7yIxe5U2WExXx52Tan++p11Q==",
+      "path": "opentk.windowing.desktop/4.8.2",
+      "hashPath": "opentk.windowing.desktop.4.8.2.nupkg.sha512"
+    },
+    "OpenTK.Windowing.GraphicsLibraryFramework/4.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o50PgKL8G0Pqs7Lo7hu1ru+5X5l03aht5jaeik7McXFgVaBJzMLhMhZkiferx4bbcC9Rq597BOknDwqE/bsLOw==",
+      "path": "opentk.windowing.graphicslibraryframework/4.8.2",
+      "hashPath": "opentk.windowing.graphicslibraryframework.4.8.2.nupkg.sha512"
+    },
+    "Panuon.WPF/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NmA0O5qDwVmc1mh97XNL6HBuD0mqeZhbq0uW+R9pZ0AlP0DuR/0bZP/xvDYXfeHx7p8ww4/ZwHK/LRdyCcip+A==",
+      "path": "panuon.wpf/1.1.0",
+      "hashPath": "panuon.wpf.1.1.0.nupkg.sha512"
+    },
+    "Panuon.WPF.UI/1.2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Lup+CVZ1ubM1jdbjtb/eJMcFMvLRg6BqvRjMJJwDzGBp1dACC1L5RNS6OuS8mm6N1QbF2q7KaULnAkYH+uzQXg==",
+      "path": "panuon.wpf.ui/1.2.1.2",
+      "hashPath": "panuon.wpf.ui.1.2.1.2.nupkg.sha512"
+    },
+    "SkiaSharp/2.88.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LJHAMrbWO00J7jXWLWehyjqFo29T4VzABimfJb4nICqpEe3c/KvQGWL4ItON8ymzhxYOeFgyxeRzuNzO4GHSug==",
+      "path": "skiasharp/2.88.7",
+      "hashPath": "skiasharp.2.88.7.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.macOS/2.88.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3jNzco4VjcYPFNxR9aNWcgweFXbTSdM1VpNRzCS4X0i1A1OuNqcaulrAvmntNpujeWxHo9e6WGh6FN8Jf5+XhA==",
+      "path": "skiasharp.nativeassets.macos/2.88.7",
+      "hashPath": "skiasharp.nativeassets.macos.2.88.7.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Win32/2.88.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BCXmWdQ0oVck9vRwC8U3ocSaTHEx28VB+6qw9OxGIMQ86iO5bp4Flqk3IXH0l9Pbr7vWAUOpI212iaL9mTaUZQ==",
+      "path": "skiasharp.nativeassets.win32/2.88.7",
+      "hashPath": "skiasharp.nativeassets.win32.2.88.7.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
+      "path": "system.runtime.compilerservices.unsafe/5.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    },
+    "VPet-Simulator.Core/1.1.0.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lxh+VvQ5TkNj6uGwnHnYL7mkDmi4PRscFPo/1Ty+mcRhT11qg8dL5qnb4ne3JkpOBwDS3xnQNYRESQwixomg/g==",
+      "path": "vpet-simulator.core/1.1.0.20",
+      "hashPath": "vpet-simulator.core.1.1.0.20.nupkg.sha512"
+    },
+    "VPet-Simulator.Windows.Interface/1.1.0.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JBPiQ7+8NWUkZQ5OgbF6lQRdyG/VcaskrqLTFjKcoxszHH6XDItLHkP/mQZ5YyX+simE8v2f7e36TUp6bRbnMw==",
+      "path": "vpet-simulator.windows.interface/1.1.0.20",
+      "hashPath": "vpet-simulator.windows.interface.1.1.0.20.nupkg.sha512"
+    },
+    "Live2DCSharpSDK.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Live2DCSharpSDK.Framework/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Live2DCSharpSDK.WPF/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VPet.Live2DAnimation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
