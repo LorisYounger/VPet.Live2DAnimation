@@ -8,13 +8,14 @@ namespace VPet.Plugin.Live2DAnimation
     {
         public Live2DPlugin(IMainWindow mainwin) : base(mainwin)
         {
-
+            Program.Main();
         }
         public override void LoadPlugin()
         {
-            Program.Main();
+           
         }
         public override string PluginName => "Live2DAnimation";
+
     }
 
 }

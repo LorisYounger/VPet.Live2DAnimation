@@ -2,6 +2,7 @@
 using LinePutScript;
 using Live2DCSharpSDK.WPF;
 using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 using VPet_Simulator.Core;
 using static VPet_Simulator.Core.Picture;
@@ -11,11 +12,11 @@ namespace VPet.Live2DAnimation
     /// <summary>
     /// Live2D动画 核心MOC文件
     /// </summary>
-    public class Live2DMOCAnimation : IImageRun
+    public class Live2DMOCAnimation : IGraph
     {
         public static void LoadGraph(GraphCore graph, FileSystemInfo path, ILine info)
         {
-            if (!(path is FileInfo f) || f.Extension.Equals(".moc3", StringComparison.CurrentCultureIgnoreCase))
+            if (!(path is FileInfo f) || !f.Extension.Equals(".moc3", StringComparison.CurrentCultureIgnoreCase))
             {
                 return;
             }
@@ -40,7 +41,7 @@ namespace VPet.Live2DAnimation
             catch (Exception e)
             {
                 IsFail = true;
-                FailMessage = e.Message;
+                FailMessage = e.ToString();
             }
         }
         public bool IsLoop { get; set; }
@@ -55,11 +56,15 @@ namespace VPet.Live2DAnimation
 
         public IGraph.TaskControl Control { get; set; }
 
-        public Task Run(Image img, Action EndAction = null)
-        {
-            throw new NotImplementedException();
-        }
 
+        public override bool Equals(object obj)
+        {
+            if (!IsReady || !GraphCore.CommConfig.ContainsKey("L2D" + ModelName))
+            {
+                return false;
+            }
+            return GraphCore.CommConfig["L2D" + ModelName] == obj;
+        }
         public void Run(Decorator parant, Action EndAction = null)
         {
             throw new NotImplementedException();

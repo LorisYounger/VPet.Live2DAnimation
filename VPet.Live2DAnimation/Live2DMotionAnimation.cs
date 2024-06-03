@@ -11,7 +11,7 @@ namespace VPet.Live2DAnimation
     /// <summary>
     /// Live2D动画 动作文件
     /// </summary>
-    public class Live2DMotionAnimation : IImageRun
+    public class Live2DMotionAnimation : IGraph
     {
         public static void LoadGraph(GraphCore graph, FileSystemInfo path, ILine info)
         {
@@ -52,14 +52,39 @@ namespace VPet.Live2DAnimation
 
         public IGraph.TaskControl Control { get; set; }
 
-        public Task Run(Image img, Action EndAction = null)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Run(Decorator parant, Action EndAction = null)
         {
-            throw new NotImplementedException();
+            if (!IsReady || !GraphCore.CommConfig.ContainsKey("L2D" + ModelName))
+            {
+                EndAction?.Invoke();
+                return;
+            }
+            if (Control?.PlayState == true)
+            {//如果当前正在运行,重置状态
+                Control.Stop(() => Run(parant, EndAction));
+                return;
+            }
+            Live2DWPFModel model = (Live2DWPFModel)GraphCore.CommConfig["L2D" + ModelName];
+            parant.Dispatcher.Invoke(() =>
+            {
+                if (parant.Tag != model)
+                {
+                    parant.Tag = model;
+                    if (model.GLControl.Parent != null)
+                    {
+                        ((Decorator)model.GLControl.Parent).Child = null;
+                    }
+                    parant.Child = model.GLControl;
+                }
+            });
+        }
+        public override bool Equals(object obj)
+        {
+            if (!IsReady || !GraphCore.CommConfig.ContainsKey("L2D" + ModelName))
+            {
+                return false;
+            }
+            return GraphCore.CommConfig["L2D" + ModelName] == obj;
         }
     }
 
