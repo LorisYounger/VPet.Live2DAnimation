@@ -396,4 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-VPet.Live2DAnimation/Live2DCubismCore.dll
+Live2DCubismCore.dll

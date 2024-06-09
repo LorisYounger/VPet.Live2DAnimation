@@ -7,4 +7,8 @@
 
 使用本项目需要添加 [Live2DCubismCore.dll](https://www.live2d.com/sdk/download/native/) 到软件发布根目录
 
-或插件根目录(若以代码插件的形式添加)
+或插件根目录(若以代码插件的形式添加 eg:`VPet.Plugin.Live2DAnimation\1102_Live2DAnimation`)
+
+### 其他
+
+使用该项目可能需要遵守Live2D相关协议, 在下载 [Live2DCubismCore.dll](https://www.live2d.com/sdk/download/native/) 时候可以看到
