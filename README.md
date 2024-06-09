@@ -5,6 +5,6 @@
 
 同时也提供 `VPet-Simulator.Windows` 代码插件版本
 
-使用本项目需要添加 [Live2DCubismCore.dll](https://www.live2d.com/sdk/download/native/) 到软件发布根目录/引用
+使用本项目需要添加 [Live2DCubismCore.dll](https://www.live2d.com/sdk/download/native/) 到软件发布根目录
 
-**注:未完成**
+或插件根目录(若以代码插件的形式添加)

@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="1102_Live2DAnimation\**" />
+    <EmbeddedResource Remove="1102_Live2DAnimation\**" />
+    <None Remove="1102_Live2DAnimation\**" />
+    <Page Remove="1102_Live2DAnimation\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="VPet-Simulator.Core" Version="1.1.0.20" />
     <PackageReference Include="VPet-Simulator.Windows.Interface" Version="1.1.0.20" />
   </ItemGroup>
