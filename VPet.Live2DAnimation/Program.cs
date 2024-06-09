@@ -19,7 +19,7 @@ namespace VPet.Live2DAnimation
         /// </summary>
         public static void Main()
         {
-            PetLoader.IGraphConvert.Add("l2dmoc", Live2DMOCAnimation.LoadGraph);
+            PetLoader.IGraphConvert.Add("l2dmoc", Live2DModelBaseAnimation.LoadGraph);
             PetLoader.IGraphConvert.Add("l2dmot", Live2DMotionAnimation.LoadGraph);
             PetLoader.IGraphConvert.Add("l2d", LoadGraph);
         }
@@ -36,7 +36,7 @@ namespace VPet.Live2DAnimation
             if (f.Name.ToLower().EndsWith(".motion3.json"))
                 Live2DMotionAnimation.LoadGraph(graph, f, info);
             else if (f.Extension.Equals(".moc3", StringComparison.CurrentCultureIgnoreCase))
-                Live2DMOCAnimation.LoadGraph(graph, f, info);
+                Live2DModelBaseAnimation.LoadGraph(graph, f, info);
         }
     }
 }

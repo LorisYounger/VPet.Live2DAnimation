@@ -2,6 +2,7 @@
 using LinePutScript;
 using Live2DCSharpSDK.WPF;
 using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 using VPet_Simulator.Core;
 using static VPet_Simulator.Core.IGraph;
@@ -10,40 +11,47 @@ using static VPet_Simulator.Core.Picture;
 namespace VPet.Live2DAnimation
 {
     /// <summary>
-    /// Live2D动画 动作文件
+    /// Live2D动画 核心MOC文件
     /// </summary>
-    public class Live2DMotionAnimation : AILive2DAnimation
+    public class Live2DModelBaseAnimation : AILive2DAnimation
     {
         public static void LoadGraph(GraphCore graph, FileSystemInfo path, ILine info)
         {
-            if (!(path is FileInfo f) || !f.Name.ToLower().EndsWith(".motion3.json", StringComparison.CurrentCultureIgnoreCase))
+            if (!(path is FileInfo f) || !f.Extension.Equals(".moc3", StringComparison.CurrentCultureIgnoreCase))
             {
                 return;
             }
             bool isLoop = info[(gbol)"loop"];
             string modelname = info[(gstr)"modelname"];
+            var gi = new GraphInfo(path, info);
             if (string.IsNullOrWhiteSpace(modelname))
             {
-                modelname = path.Name.Split('.')[0];
+                modelname = gi.Name;
             }
-            graph.AddGraph(new Live2DMotionAnimation(graph, f, new GraphInfo(path, info), modelname, isLoop));
+            graph.AddGraph(new Live2DModelBaseAnimation(graph, f,gi, modelname, isLoop));
         }
         private GraphCore GraphCore;
-        /// <summary>
-        /// Json地址
-        /// </summary>
-        public string Path { get; set; }
-
-        public Live2DMotionAnimation(GraphCore graphCore, FileInfo path, GraphInfo graphinfo, string modelname, bool isLoop = false)
+        public Live2DWPFModel Model { get; set; }
+        public Live2DModelBaseAnimation(GraphCore graphCore, FileInfo path, GraphInfo graphinfo, string modelname, bool isLoop = false)
         {
             IsLoop = isLoop;
             GraphInfo = graphinfo;
             GraphCore = graphCore;
-            Path = path.FullName;
-            ModelName = modelname;
+            try
+            {
+                Model = new Live2DWPFModel(path.FullName);
+                ModelName = modelname;
+                GraphCore.CommConfig["L2D" + ModelName] = Model;
+                IsReady = true;
+            }
+            catch (Exception e)
+            {
+                IsFail = true;
+                FailMessage = e.ToString();
+            }
         }
 
-        public override bool IsReady => true;
+        public int Length { get; set; } = 1000;
 
         public override void Run(Decorator parant, Action EndAction = null)
         {
@@ -57,11 +65,12 @@ namespace VPet.Live2DAnimation
                 Control.Stop(() => Run(parant, EndAction));
                 return;
             }
+            Control = new TaskControl(EndAction);
             Live2DWPFModel model = (Live2DWPFModel)GraphCore.CommConfig["L2D" + ModelName];
             Control = new TaskControl(EndAction);
             parant.Dispatcher.Invoke(() =>
             {
-                if(parant.Tag != this)
+                if (parant.Tag != this)
                 {
                     if (!Equals(parant.Tag))
                     {
@@ -73,8 +82,8 @@ namespace VPet.Live2DAnimation
                         parant.Child = model.GLControl;
                     }
                     parant.Tag = this;
-                }                
-                model.StartMotion(Path, (x, y) => Run(Control));
+                }
+                Task.Run(() => Run(Control));
             });
         }
         /// <summary>
@@ -83,6 +92,7 @@ namespace VPet.Live2DAnimation
         /// <param name="Control"></param>
         public void Run(TaskControl Control)
         {
+            Thread.Sleep(Length);
             //判断是否要下一步
             switch (Control.Type)
             {
@@ -108,7 +118,6 @@ namespace VPet.Live2DAnimation
                     return;
             }
         }
-
     }
 
 }
