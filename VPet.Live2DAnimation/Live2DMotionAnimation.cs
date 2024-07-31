@@ -45,6 +45,12 @@ namespace VPet.Live2DAnimation
 
         public override bool IsReady => true;
 
+        public new TaskControl Control
+        {
+            get => ((Live2DModelBaseAnimation)GraphCore.CommConfig["L2D" + ModelName]).Control;
+            set => ((Live2DModelBaseAnimation)GraphCore.CommConfig["L2D" + ModelName]).Control = value;
+        }
+
         public override void Run(Decorator parant, Action EndAction = null)
         {
             if (!IsReady || !GraphCore.CommConfig.ContainsKey("L2D" + ModelName))
@@ -53,27 +59,28 @@ namespace VPet.Live2DAnimation
                 return;
             }
             if (Control?.PlayState == true)
-            {//如果当前正在运行,重置状态
-                Control.Stop(() => Run(parant, EndAction));
-                return;
+            {//如果当前正在运行,掐断
+                Control.Stop();
             }
-            Live2DWPFModel model = (Live2DWPFModel)GraphCore.CommConfig["L2D" + ModelName];
+            var l2b = (Live2DModelBaseAnimation)GraphCore.CommConfig["L2D" + ModelName];
+            Live2DWPFModel model = l2b.Model;
+            Viewbox viewcontrol = l2b.ViewControl;
             Control = new TaskControl(EndAction);
             parant.Dispatcher.Invoke(() =>
             {
-                if(parant.Tag != this)
+                if (parant.Tag != this)
                 {
                     if (!Equals(parant.Tag))
                     {
                         parant.Tag = model;
-                        if (model.GLControl.Parent != null)
+                        if (viewcontrol.Parent != null)
                         {
-                            ((Decorator)model.GLControl.Parent).Child = null;
+                            ((Decorator)viewcontrol.Parent).Child = null;
                         }
-                        parant.Child = model.GLControl;
+                        parant.Child = viewcontrol;
                     }
                     parant.Tag = this;
-                }                
+                }
                 model.StartMotion(Path, (x, y) => Run(Control));
             });
         }

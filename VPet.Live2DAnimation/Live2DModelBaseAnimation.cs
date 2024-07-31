@@ -28,10 +28,11 @@ namespace VPet.Live2DAnimation
             {
                 modelname = gi.Name;
             }
-            graph.AddGraph(new Live2DModelBaseAnimation(graph, f,gi, modelname, isLoop));
+            graph.AddGraph(new Live2DModelBaseAnimation(graph, f, gi, modelname, isLoop));
         }
         private GraphCore GraphCore;
         public Live2DWPFModel Model { get; set; }
+        public Viewbox ViewControl { get; set; }
         public Live2DModelBaseAnimation(GraphCore graphCore, FileInfo path, GraphInfo graphinfo, string modelname, bool isLoop = false)
         {
             IsLoop = isLoop;
@@ -40,8 +41,13 @@ namespace VPet.Live2DAnimation
             try
             {
                 Model = new Live2DWPFModel(path.FullName);
+                Model.GLControl.Width = Model.GLControl.Height = graphCore.Resolution;
+                ViewControl = new Viewbox
+                {
+                    Child = Model.GLControl,
+                };
                 ModelName = modelname;
-                GraphCore.CommConfig["L2D" + ModelName] = Model;
+                GraphCore.CommConfig["L2D" + ModelName] = this;
                 IsReady = true;
             }
             catch (Exception e)
@@ -61,12 +67,11 @@ namespace VPet.Live2DAnimation
                 return;
             }
             if (Control?.PlayState == true)
-            {//如果当前正在运行,重置状态
-                Control.Stop(() => Run(parant, EndAction));
-                return;
+            {//如果当前正在运行,掐断
+                Control.Stop();
             }
             Control = new TaskControl(EndAction);
-            Live2DWPFModel model = (Live2DWPFModel)GraphCore.CommConfig["L2D" + ModelName];
+            Live2DWPFModel model = ((Live2DModelBaseAnimation)GraphCore.CommConfig["L2D" + ModelName]).Model;
             Control = new TaskControl(EndAction);
             parant.Dispatcher.Invoke(() =>
             {
@@ -75,11 +80,11 @@ namespace VPet.Live2DAnimation
                     if (!Equals(parant.Tag))
                     {
                         parant.Tag = model;
-                        if (model.GLControl.Parent != null)
+                        if (ViewControl.Parent != null)
                         {
-                            ((Decorator)model.GLControl.Parent).Child = null;
+                            ((Decorator)ViewControl.Parent).Child = null;
                         }
-                        parant.Child = model.GLControl;
+                        parant.Child = ViewControl;
                     }
                     parant.Tag = this;
                 }
