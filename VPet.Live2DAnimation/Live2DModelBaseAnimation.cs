@@ -70,9 +70,9 @@ namespace VPet.Live2DAnimation
             {//如果当前正在运行,掐断
                 Control.Stop();
             }
-            Control = new TaskControl(EndAction);
             Live2DWPFModel model = ((Live2DModelBaseAnimation)GraphCore.CommConfig["L2D" + ModelName]).Model;
-            Control = new TaskControl(EndAction);
+            var NEWControl = new TaskControl(EndAction);
+            Control = NEWControl;
             parant.Dispatcher.Invoke(() =>
             {
                 if (parant.Tag != this)
@@ -88,7 +88,7 @@ namespace VPet.Live2DAnimation
                     }
                     parant.Tag = this;
                 }
-                Task.Run(() => Run(Control));
+                Task.Run(() => Run(NEWControl));
             });
         }
         /// <summary>

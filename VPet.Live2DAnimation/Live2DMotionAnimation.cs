@@ -65,7 +65,8 @@ namespace VPet.Live2DAnimation
             var l2b = (Live2DModelBaseAnimation)GraphCore.CommConfig["L2D" + ModelName];
             Live2DWPFModel model = l2b.Model;
             Viewbox viewcontrol = l2b.ViewControl;
-            Control = new TaskControl(EndAction);
+            var NEWControl = new TaskControl(EndAction);
+            Control = NEWControl;
             parant.Dispatcher.Invoke(() =>
             {
                 if (parant.Tag != this)
@@ -81,7 +82,7 @@ namespace VPet.Live2DAnimation
                     }
                     parant.Tag = this;
                 }
-                model.StartMotion(Path, (x, y) => Run(Control));
+                model.StartMotion(Path, (x, y) => Run(NEWControl));
             });
         }
         /// <summary>
