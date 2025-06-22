@@ -117,6 +117,10 @@ namespace VPet.Live2DAnimation
             }
         }
 
+        public override void Dispose()
+        {
+            
+        }
     }
 
 }

@@ -39,5 +39,7 @@ namespace VPet.Live2DAnimation
         {
             return ModelName.GetHashCode();
         }
+
+        public abstract void Dispose();
     }
 }

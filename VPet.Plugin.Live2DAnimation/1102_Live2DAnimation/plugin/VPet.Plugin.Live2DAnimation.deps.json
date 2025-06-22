@@ -8,15 +8,16 @@
     ".NETCoreApp,Version=v8.0": {
       "VPet.Plugin.Live2DAnimation/1.0.0": {
         "dependencies": {
-          "VPet-Simulator.Core": "1.1.0.20",
-          "VPet-Simulator.Windows.Interface": "1.1.0.20",
+          "OpenTK.GLWpfControl": "4.3.3",
+          "VPet-Simulator.Core": "1.1.0.48",
+          "VPet-Simulator.Windows.Interface": "1.1.0.48",
           "VPet.Live2DAnimation": "1.0.0"
         },
         "runtime": {
           "VPet.Plugin.Live2DAnimation.dll": {}
         }
       },
-      "LinePutScript/1.11.6": {
+      "LinePutScript/1.11.9": {
         "runtime": {
           "lib/net8.0/LinePutScript.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -26,7 +27,7 @@
       },
       "LinePutScript.Localization.WPF/1.0.7": {
         "dependencies": {
-          "LinePutScript": "1.11.6"
+          "LinePutScript": "1.11.9"
         },
         "runtime": {
           "lib/net6.0/LinePutScript.Localization.WPF.dll": {
@@ -76,14 +77,14 @@
           }
         }
       },
-      "OpenTK.GLWpfControl/4.2.3": {
+      "OpenTK.GLWpfControl/4.3.3": {
         "dependencies": {
           "OpenTK": "4.8.2"
         },
         "runtime": {
           "lib/netcoreapp3.1/GLWpfControl.dll": {
-            "assemblyVersion": "4.2.3.0",
-            "fileVersion": "4.2.3.0"
+            "assemblyVersion": "4.3.3.0",
+            "fileVersion": "4.3.3.0"
           }
         }
       },
@@ -190,38 +191,38 @@
           }
         }
       },
-      "Panuon.WPF/1.1.0": {
+      "Panuon.WPF/1.1.2.2": {
         "runtime": {
           "lib/net8.0-windows/Panuon.WPF.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+            "assemblyVersion": "1.1.2.2",
+            "fileVersion": "1.1.2.2"
           }
         }
       },
-      "Panuon.WPF.UI/1.2.1.2": {
+      "Panuon.WPF.UI/1.2.4.9": {
         "dependencies": {
-          "Panuon.WPF": "1.1.0"
+          "Panuon.WPF": "1.1.2.2"
         },
         "runtime": {
           "lib/net8.0-windows/Panuon.WPF.UI.dll": {
-            "assemblyVersion": "1.2.1.2",
-            "fileVersion": "1.2.1.2"
+            "assemblyVersion": "1.2.4.8",
+            "fileVersion": "1.2.4.8"
           }
         }
       },
-      "SkiaSharp/2.88.7": {
+      "SkiaSharp/3.116.1": {
         "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "2.88.7",
-          "SkiaSharp.NativeAssets.macOS": "2.88.7"
+          "SkiaSharp.NativeAssets.Win32": "3.116.1",
+          "SkiaSharp.NativeAssets.macOS": "3.116.1"
         },
         "runtime": {
-          "lib/net6.0/SkiaSharp.dll": {
-            "assemblyVersion": "2.88.0.0",
-            "fileVersion": "2.88.7.0"
+          "lib/net8.0/SkiaSharp.dll": {
+            "assemblyVersion": "3.116.0.0",
+            "fileVersion": "3.116.1.0"
           }
         }
       },
-      "SkiaSharp.NativeAssets.macOS/2.88.7": {
+      "SkiaSharp.NativeAssets.macOS/3.116.1": {
         "runtimeTargets": {
           "runtimes/osx/native/libSkiaSharp.dylib": {
             "rid": "osx",
@@ -230,7 +231,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Win32/2.88.7": {
+      "SkiaSharp.NativeAssets.Win32/3.116.1": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/libSkiaSharp.dll": {
             "rid": "win-arm64",
@@ -250,11 +251,12 @@
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
-      "VPet-Simulator.Core/1.1.0.20": {
+      "VPet-Simulator.Core/1.1.0.48": {
         "dependencies": {
-          "LinePutScript": "1.11.6",
+          "LinePutScript": "1.11.9",
           "LinePutScript.Localization.WPF": "1.0.7",
-          "Panuon.WPF.UI": "1.2.1.2"
+          "Panuon.WPF.UI": "1.2.4.9",
+          "SkiaSharp": "3.116.1"
         },
         "runtime": {
           "lib/net8.0/VPet-Simulator.Core.dll": {
@@ -263,9 +265,9 @@
           }
         }
       },
-      "VPet-Simulator.Windows.Interface/1.1.0.20": {
+      "VPet-Simulator.Windows.Interface/1.1.0.48": {
         "dependencies": {
-          "VPet-Simulator.Core": "1.1.0.20"
+          "VPet-Simulator.Core": "1.1.0.48"
         },
         "runtime": {
           "lib/net8.0/VPet-Simulator.Windows.Interface.dll": {
@@ -277,36 +279,59 @@
       "Live2DCSharpSDK.App/1.0.0": {
         "dependencies": {
           "Live2DCSharpSDK.Framework": "1.0.0",
-          "SkiaSharp": "2.88.7"
+          "SkiaSharp": "3.116.1"
         },
         "runtime": {
-          "Live2DCSharpSDK.App.dll": {}
+          "Live2DCSharpSDK.App.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Live2DCSharpSDK.Framework/1.0.0": {
         "runtime": {
-          "Live2DCSharpSDK.Framework.dll": {}
+          "Live2DCSharpSDK.Framework.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
-      "Live2DCSharpSDK.WPF/1.0.0": {
+      "Live2DCSharpSDK.OpenGL/1.0.0": {
         "dependencies": {
-          "Live2DCSharpSDK.App": "1.0.0",
-          "OpenTK": "4.8.2",
-          "OpenTK.GLWpfControl": "4.2.3"
+          "Live2DCSharpSDK.App": "1.0.0"
         },
         "runtime": {
-          "Live2DCSharpSDK.WPF.dll": {}
+          "Live2DCSharpSDK.OpenGL.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Live2DCSharpSDK.OpenGL.WPF/1.0.0": {
+        "dependencies": {
+          "Live2DCSharpSDK.OpenGL": "1.0.0",
+          "OpenTK": "4.8.2",
+          "OpenTK.GLWpfControl": "4.3.3"
+        },
+        "runtime": {
+          "Live2DCSharpSDK.OpenGL.WPF.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "VPet.Live2DAnimation/1.0.0": {
         "dependencies": {
           "LinePutScript.Localization.WPF": "1.0.7",
-          "Live2DCSharpSDK.WPF": "1.0.0",
-          "OpenTK.GLWpfControl": "4.2.3",
-          "VPet-Simulator.Core": "1.1.0.20"
+          "Live2DCSharpSDK.OpenGL.WPF": "1.0.0",
+          "OpenTK.GLWpfControl": "4.3.3",
+          "VPet-Simulator.Core": "1.1.0.48"
         },
         "runtime": {
-          "VPet.Live2DAnimation.dll": {}
+          "VPet.Live2DAnimation.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -317,12 +342,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "LinePutScript/1.11.6": {
+    "LinePutScript/1.11.9": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2m1AsVxPKKK6Ey/mFt0yEGdrS2LjDX0hKZrKK4LzxNRXePmyWrkiRCUXJK5mSNNZw0OENRAn58jdX9+00jFL+A==",
-      "path": "lineputscript/1.11.6",
-      "hashPath": "lineputscript.1.11.6.nupkg.sha512"
+      "sha512": "sha512-in2WEh3jV5+aNHMP8zpvSqDvmgf4sOCS1JhQZSjqG9MOYpfvfLsjbuFidJF3+sp7JjwVGLmhn/AYmZgPENbBWw==",
+      "path": "lineputscript/1.11.9",
+      "hashPath": "lineputscript.1.11.9.nupkg.sha512"
     },
     "LinePutScript.Localization.WPF/1.0.7": {
       "type": "package",
@@ -359,12 +384,12 @@
       "path": "opentk.core/4.8.2",
       "hashPath": "opentk.core.4.8.2.nupkg.sha512"
     },
-    "OpenTK.GLWpfControl/4.2.3": {
+    "OpenTK.GLWpfControl/4.3.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VIq15MqeMB42v7cuoPcbHAFzdlOcN5DZEhguuQVdvZP0NlfajjaoVDqtP3koOWLs1how2YqCaVk1qIvsuRdQqQ==",
-      "path": "opentk.glwpfcontrol/4.2.3",
-      "hashPath": "opentk.glwpfcontrol.4.2.3.nupkg.sha512"
+      "sha512": "sha512-mbKt+ZApqYk/Ym4Ph0dnI+hfSnyXn/gWW6Ys6l3C+fMlgXLYaWpbQ+/3yNm6G1lJ3vteXGxtoMJPFYlaXi/tQw==",
+      "path": "opentk.glwpfcontrol/4.3.3",
+      "hashPath": "opentk.glwpfcontrol.4.3.3.nupkg.sha512"
     },
     "OpenTK.Graphics/4.8.2": {
       "type": "package",
@@ -415,40 +440,40 @@
       "path": "opentk.windowing.graphicslibraryframework/4.8.2",
       "hashPath": "opentk.windowing.graphicslibraryframework.4.8.2.nupkg.sha512"
     },
-    "Panuon.WPF/1.1.0": {
+    "Panuon.WPF/1.1.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NmA0O5qDwVmc1mh97XNL6HBuD0mqeZhbq0uW+R9pZ0AlP0DuR/0bZP/xvDYXfeHx7p8ww4/ZwHK/LRdyCcip+A==",
-      "path": "panuon.wpf/1.1.0",
-      "hashPath": "panuon.wpf.1.1.0.nupkg.sha512"
+      "sha512": "sha512-GDoILU32uPeCl6O+Bk/zIMG+dWZ9TyHbTQi9MNyTwNm+BlzDhPzbHkmLFYQ7Q8GhUyAH2DRtYujU/NCAEecEtw==",
+      "path": "panuon.wpf/1.1.2.2",
+      "hashPath": "panuon.wpf.1.1.2.2.nupkg.sha512"
     },
-    "Panuon.WPF.UI/1.2.1.2": {
+    "Panuon.WPF.UI/1.2.4.9": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Lup+CVZ1ubM1jdbjtb/eJMcFMvLRg6BqvRjMJJwDzGBp1dACC1L5RNS6OuS8mm6N1QbF2q7KaULnAkYH+uzQXg==",
-      "path": "panuon.wpf.ui/1.2.1.2",
-      "hashPath": "panuon.wpf.ui.1.2.1.2.nupkg.sha512"
+      "sha512": "sha512-Tr+6o4NS3fg/GMlEFzJRqJfUyWhpsGOBxaaurvo4ODVGJ9I2UhcZ//2xOxHuct5yJxLPgiB5tt2ZVaiZEnbPiA==",
+      "path": "panuon.wpf.ui/1.2.4.9",
+      "hashPath": "panuon.wpf.ui.1.2.4.9.nupkg.sha512"
     },
-    "SkiaSharp/2.88.7": {
+    "SkiaSharp/3.116.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-LJHAMrbWO00J7jXWLWehyjqFo29T4VzABimfJb4nICqpEe3c/KvQGWL4ItON8ymzhxYOeFgyxeRzuNzO4GHSug==",
-      "path": "skiasharp/2.88.7",
-      "hashPath": "skiasharp.2.88.7.nupkg.sha512"
+      "sha512": "sha512-DNDwbRjP+aMo27dV2h/uHCVTcWubWWxHnPLiePNyl24f4Pv43mQ8AQQeseOrKR+J3AOCEs6t0sUjo0aa3j3RWQ==",
+      "path": "skiasharp/3.116.1",
+      "hashPath": "skiasharp.3.116.1.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.macOS/2.88.7": {
+    "SkiaSharp.NativeAssets.macOS/3.116.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3jNzco4VjcYPFNxR9aNWcgweFXbTSdM1VpNRzCS4X0i1A1OuNqcaulrAvmntNpujeWxHo9e6WGh6FN8Jf5+XhA==",
-      "path": "skiasharp.nativeassets.macos/2.88.7",
-      "hashPath": "skiasharp.nativeassets.macos.2.88.7.nupkg.sha512"
+      "sha512": "sha512-3KPvpKysDmEMt0NnAZPX5U6KFk0LmG/72/IjAIJemIksIZ0Tjs9pGpr3L+zboVCv1MLVoJLKl3nJDXUG6Jda6A==",
+      "path": "skiasharp.nativeassets.macos/3.116.1",
+      "hashPath": "skiasharp.nativeassets.macos.3.116.1.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.Win32/2.88.7": {
+    "SkiaSharp.NativeAssets.Win32/3.116.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BCXmWdQ0oVck9vRwC8U3ocSaTHEx28VB+6qw9OxGIMQ86iO5bp4Flqk3IXH0l9Pbr7vWAUOpI212iaL9mTaUZQ==",
-      "path": "skiasharp.nativeassets.win32/2.88.7",
-      "hashPath": "skiasharp.nativeassets.win32.2.88.7.nupkg.sha512"
+      "sha512": "sha512-dRQ75MCI8oz6zAs2Y1w6pq6ARs4MhdNG+gf3doOxOxdnueDXffQLGQIxON54GDoxc0WjKOoHMKBR4DhaduwwQw==",
+      "path": "skiasharp.nativeassets.win32/3.116.1",
+      "hashPath": "skiasharp.nativeassets.win32.3.116.1.nupkg.sha512"
     },
     "System.Runtime.CompilerServices.Unsafe/5.0.0": {
       "type": "package",
@@ -457,19 +482,19 @@
       "path": "system.runtime.compilerservices.unsafe/5.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
     },
-    "VPet-Simulator.Core/1.1.0.20": {
+    "VPet-Simulator.Core/1.1.0.48": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-lxh+VvQ5TkNj6uGwnHnYL7mkDmi4PRscFPo/1Ty+mcRhT11qg8dL5qnb4ne3JkpOBwDS3xnQNYRESQwixomg/g==",
-      "path": "vpet-simulator.core/1.1.0.20",
-      "hashPath": "vpet-simulator.core.1.1.0.20.nupkg.sha512"
+      "sha512": "sha512-j7EQ3jRY5kUMtx4YLTQcpISc8R/djtOS0k8BJMAw2xtdkkZmUtEyy3HRmTO7WBhgJedJOcHhJPDYCuLxh0mOYA==",
+      "path": "vpet-simulator.core/1.1.0.48",
+      "hashPath": "vpet-simulator.core.1.1.0.48.nupkg.sha512"
     },
-    "VPet-Simulator.Windows.Interface/1.1.0.20": {
+    "VPet-Simulator.Windows.Interface/1.1.0.48": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JBPiQ7+8NWUkZQ5OgbF6lQRdyG/VcaskrqLTFjKcoxszHH6XDItLHkP/mQZ5YyX+simE8v2f7e36TUp6bRbnMw==",
-      "path": "vpet-simulator.windows.interface/1.1.0.20",
-      "hashPath": "vpet-simulator.windows.interface.1.1.0.20.nupkg.sha512"
+      "sha512": "sha512-4oXvsDTRm/ORji24dZgpLTRxIwi0PvSBl3mcO+fLaGUtC2EtdH01rJt4dE82+ZGizEa9QklikXuX8NkjrcqVtA==",
+      "path": "vpet-simulator.windows.interface/1.1.0.48",
+      "hashPath": "vpet-simulator.windows.interface.1.1.0.48.nupkg.sha512"
     },
     "Live2DCSharpSDK.App/1.0.0": {
       "type": "project",
@@ -481,7 +506,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Live2DCSharpSDK.WPF/1.0.0": {
+    "Live2DCSharpSDK.OpenGL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Live2DCSharpSDK.OpenGL.WPF/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

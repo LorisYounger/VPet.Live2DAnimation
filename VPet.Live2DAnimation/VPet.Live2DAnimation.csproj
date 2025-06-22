@@ -9,12 +9,12 @@
 
   <ItemGroup>
     <PackageReference Include="LinePutScript.Localization.WPF" Version="1.0.7" />
-    <PackageReference Include="OpenTK.GLWpfControl" Version="4.2.3" />
-    <PackageReference Include="VPet-Simulator.Core" Version="1.1.0.16-alpha" />
+    <PackageReference Include="OpenTK.GLWpfControl" Version="4.3.3" />
+    <PackageReference Include="VPet-Simulator.Core" Version="1.1.0.50" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Live2DCSharpSDK.WPF\Live2DCSharpSDK.WPF\Live2DCSharpSDK.WPF.csproj" />
+    <ProjectReference Include="..\..\Live2DCSharpSDK.WPF\Live2DCSharpSDK.OpenGL.WPF\Live2DCSharpSDK.OpenGL.WPF.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -28,12 +28,35 @@ namespace VPet.Live2DAnimation
             {
                 modelname = gi.Name;
             }
+            int reslevel = (int)Math.Sqrt(Math.Sqrt(graph.Resolution));
+            while (reslevel > 1 && reslevel <= 8 && reslevel != 6)
+            {
+                if (!string.IsNullOrWhiteSpace(info.GetString($"path_r{reslevel}")))
+                {
+                    var newf = new FileInfo(Path.Combine(f.DirectoryName, info.GetString($"path_r{reslevel}")));
+                    if (newf.Exists)
+                    {
+                        f = newf;
+                        break;
+                    }
+                }
+                reslevel++;
+            }
+            if (reslevel == 8)
+            {
+                if (!string.IsNullOrWhiteSpace(info.GetString("path_r8")))
+                {
+                    var newf = new FileInfo(Path.Combine(f.DirectoryName, info.GetString("path_r8")));
+                    if (newf.Exists)
+                        f = newf;
+                }
+            }
             graph.AddGraph(new Live2DModelBaseAnimation(graph, f, gi, modelname, isLoop));
         }
         private GraphCore GraphCore;
         public Live2DWPFModel Model { get; set; }
         public Viewbox ViewControl { get; set; }
-        public Live2DModelBaseAnimation(GraphCore graphCore, FileInfo path, GraphInfo graphinfo, string modelname, bool isLoop = false)
+        public Live2DModelBaseAnimation(GraphCore graphCore, FileInfo path, GraphInfo graphinfo, string modelname, bool isLoop = false, ILine other = null)
         {
             IsLoop = isLoop;
             GraphInfo = graphinfo;
@@ -47,6 +70,10 @@ namespace VPet.Live2DAnimation
                     Child = Model.GLControl,
                 };
                 ModelName = modelname;
+                if (GraphCore.CommConfig.TryGetValue("L2D" + ModelName, out object ol2d) && ol2d is Live2DModelBaseAnimation l2d)
+                {
+                    l2d.Model.Dispose();
+                }
                 GraphCore.CommConfig["L2D" + ModelName] = this;
                 IsReady = true;
             }
@@ -123,6 +150,16 @@ namespace VPet.Live2DAnimation
                     return;
             }
         }
+
+        public override void Dispose()
+        {
+            Model?.Dispose();
+        }
+        /// <summary>
+        /// …Ë÷√‰÷»æFPS
+        /// </summary>
+        public static void SetAllFramesPerSecond(GraphCore graphCore, double framesPerSecond) =>
+            graphCore.CommConfig.Values.OfType<Live2DModelBaseAnimation>().ToList().ForEach(x => x.Model.FramesPerSecond = framesPerSecond);
     }
 
 }

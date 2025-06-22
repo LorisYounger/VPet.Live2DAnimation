@@ -17,7 +17,11 @@ namespace VPet.Plugin.Live2DAnimation
 
         }
         public override string PluginName => "Live2DAnimation";
-
+        /// <summary>
+        /// 设置所有Live2D动画的帧率
+        /// </summary>
+        /// <param name="framesPerSecond">帧率,默认60</param>
+        public void SetAllFramesPerSecond(double framesPerSecond) => Live2DModelBaseAnimation.SetAllFramesPerSecond(MW.Core.Graph, framesPerSecond);
     }
 
 }
